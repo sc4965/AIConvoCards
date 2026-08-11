@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Good for Media — AI Conversation Cards</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site-header">
+    <img class="sun-logo" src="logo.png" alt="Good for Media">
+    <p class="org-tagline">A youth-led platform that promotes healthy digital habits and safer tech design.</p>
+  </header>
+
+  <section class="hero">
+    <h1>AI Conversation Cards</h1>
+    <p class="lede">
+      A deck of prompts to help kids and families talk about how AI shows up in everyday life —
+      at school, online, and everywhere in between. Draw a card at random or browse the full deck below.
+    </p>
+    <div class="legend">
+      <span class="pill mild"><span class="dot"></span>Mild — easy, everyday questions</span>
+      <span class="pill medium"><span class="dot"></span>Medium — a bit more to chew on</span>
+      <span class="pill spicy"><span class="dot"></span>Spicy — the big, tricky ones</span>
+    </div>
+  </section>
+
+  <nav class="mode-tabs">
+    <button class="mode-tab" data-panel="panel-about">ℹ️ About &amp; How to Play</button>
+    <button class="mode-tab active" data-panel="panel-draw">🎴 Play the Game</button>
+    <button class="mode-tab" data-panel="panel-browse">📚 Browse the Deck</button>
+  </nav>
+
+  <section id="panel-about" class="mode-panel">
+    <div class="about-groups">
+
+      <div class="about-card intro-card">
+        <p class="badge-row">
+          <span class="badge">✦ Designed by Good for Media's youth leaders</span>
+          <span class="badge">🙂 2+ Players</span>
+        </p>
+        <h2>Welcome to Good for Media's AI Conversation Cards</h2>
+        <p class="about-lede">
+          Created to spark meaningful and open dialogue about AI use with youth, this deck can be used as:
+        </p>
+        <ul class="use-list">
+          <li>a game played between young people</li>
+          <li>a reflective activity between youth and parents or trusted adults</li>
+          <li>an icebreaker for youth classes, workshops, or group meetings</li>
+        </ul>
+        <p class="about-lede">Have fun exploring your relationship with AI!</p>
+      </div>
+
+      <div class="about-card">
+        <h2>How to Play</h2>
+        <ol class="instructions-list">
+          <li>Separate the cards into three piles by category (Mild, Medium, Spicy), or shuffle the entire deck for a mix of categories.</li>
+          <li>Choose a starting player — this can be done by flipping a coin.</li>
+          <li>The starting player draws a card and reads the question aloud to the group.</li>
+          <li>Each player answers the question from their own perspective. Encourage follow-up questions and discussion based on the answer.</li>
+          <li>After a complete round of discussion, the next player draws a card and reads it aloud.</li>
+          <li>Continue playing until everyone has had a chance to ask and answer.</li>
+          <li>Feel free to make up your own way of playing the game!</li>
+        </ol>
+      </div>
+
+      <div class="about-card">
+        <h2>Conversation Norms</h2>
+        <p class="about-lede">
+          Before talking about our experiences, it's important to make sure everyone starts off with shared expectations.
+        </p>
+        <ul class="norms-list">
+          <li><strong>Be a good listener</strong> by treating everyone's stories and experiences with respect.</li>
+          <li><strong>Approach these questions with curiosity,</strong> not judgment.</li>
+          <li><strong>Take space, make space:</strong> say just enough.</li>
+          <li><strong>If you are unsure about something,</strong> ask follow-up questions instead of assuming.</li>
+        </ul>
+      </div>
+
+      <div class="about-card">
+        <h2 id="cardTypesHeading">Card Types</h2>
+        <p class="about-lede" id="cardTypesIntro">Each card falls into one of three tiers.</p>
+        <ul class="type-list">
+          <li><span class="dot mild"></span><strong>Mild cards:</strong> relatively easy to answer — lighthearted, everyday conversation starters.</li>
+          <li><span class="dot medium"></span><strong>Medium cards:</strong> require more thought and can lead to discussion about personal experiences or opinions.</li>
+          <li><span class="dot spicy"></span><strong>Spicy cards:</strong> designed to prompt deeper reflection and conversation.</li>
+        </ul>
+      </div>
+
+      <div class="about-card">
+        <h2>About Good for Media</h2>
+        <p class="about-lede">
+          Good for Media is a youth-driven, peer-mentoring &amp; education program exploring the ME in media.
+          We believe in the power of peers to influence and educate each other in positive ways.
+        </p>
+        <p class="about-lede">
+          Drawing upon teens' own experiences with tech &amp; social media, we share tips, strategies, and wisdom
+          with our peers to support healthier media engagement.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <h2>Keep the Conversation Going</h2>
+        <p class="about-lede">
+          Want to go deeper, or tell us how your conversation went? Check out these next steps from Good for Media.
+        </p>
+        <div class="resource-links">
+          <a class="resource-link" href="https://www.goodformedia.org/learn" target="_blank" rel="noopener noreferrer">
+            📚 Good for Media Learning Hub
+          </a>
+          <a class="resource-link resource-link-primary" href="https://www.goodformedia.org/join/share-your-perspective" target="_blank" rel="noopener noreferrer">
+            ✏️ Share Your Story
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="panel-draw" class="mode-panel active">
+
+    <div id="gameSetup" class="game-view active">
+      <p class="setup-lede">Choose your level(s), then hit shuffle to start.</p>
+      <div class="filter-row">
+        <button class="chip level-chip active" data-diff="all"><span class="check">✓</span>All Cards</button>
+        <button class="chip level-chip active" data-diff="mild"><span class="check">✓</span>Mild</button>
+        <button class="chip level-chip active" data-diff="medium"><span class="check">✓</span>Medium</button>
+        <button class="chip level-chip active" data-diff="spicy"><span class="check">✓</span>Spicy</button>
+      </div>
+      <p id="setupHint" class="setup-hint"></p>
+      <div class="controls">
+        <button id="startBtn" class="btn btn-primary">🔀 Shuffle &amp; Start</button>
+      </div>
+    </div>
+
+    <div id="gamePlay" class="game-view">
+      <div class="stage">
+        <div class="card-slot">
+          <div class="card" id="card">
+            <div class="card-face card-back">
+              <div class="back-logo-badge">
+                <img class="back-logo" src="logo-mark.png" alt="Good for Media">
+              </div>
+            </div>
+            <div class="card-face card-front">
+              <div class="card-content" id="cardContent">
+                <span id="catTag" class="cat-tag mild">Mild</span>
+                <div id="question" class="question">Shuffle to get started!</div>
+                <span id="cardNum" class="num"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p id="playProgress" class="play-progress"></p>
+
+        <div class="controls">
+          <button id="drawBtn" class="btn btn-primary">Shuffle</button>
+          <button id="endGameBtn" class="btn btn-secondary">🏁 End Game</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="gameSummary" class="game-view">
+      <div class="summary-card">
+        <h2>Nice work! Here's what you talked about</h2>
+        <p class="about-lede" id="summaryCount"></p>
+        <div class="summary-list" id="summaryList"></div>
+      </div>
+
+      <div class="about-card">
+        <h2>Keep the Conversation Going</h2>
+        <p class="about-lede">
+          Want to go deeper, or tell us how your conversation went? Check out these next steps from Good for Media.
+        </p>
+        <div class="resource-links">
+          <a class="resource-link" href="https://www.goodformedia.org/learn" target="_blank" rel="noopener noreferrer">
+            📚 Good for Media Learning Hub
+          </a>
+          <a class="resource-link resource-link-primary" href="https://www.goodformedia.org/join/share-your-perspective" target="_blank" rel="noopener noreferrer">
+            ✏️ Share Your Story
+          </a>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="playAgainBtn" class="btn btn-primary">🔁 Play Again</button>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="panel-browse" class="mode-panel">
+    <div class="filter-row">
+      <button class="chip t-chip active" data-diff="all">All Cards</button>
+      <button class="chip t-chip" data-diff="mild">Mild</button>
+      <button class="chip t-chip" data-diff="medium">Medium</button>
+      <button class="chip t-chip" data-diff="spicy">Spicy</button>
+    </div>
+
+    <div class="theater">
+      <div class="theater-main">
+        <button class="theater-nav prev" id="theaterPrev" aria-label="Previous card">‹</button>
+        <div class="theater-card">
+          <span id="theaterCatTag" class="cat-tag mild">Mild</span>
+          <div id="theaterQuestion" class="theater-question">Loading…</div>
+          <span id="theaterIndex" class="theater-index"></span>
+        </div>
+        <button class="theater-nav next" id="theaterNext" aria-label="Next card">›</button>
+      </div>
+
+      <div class="carousel-wrap">
+        <div class="carousel" id="carousel"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><span class="wordmark-mini">Good for Media</span> — AI Conversation Cards</p>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
