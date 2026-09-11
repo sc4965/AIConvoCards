@@ -1,3 +1,57 @@
+// Access gate — collects role (required) + optional email/org before entry.
+// Submissions are sent to the Formspree endpoint below and also logged
+// once per browser via localStorage so a visitor isn't asked twice.
+const ACCESS_FORM_ENDPOINT = "https://formspree.io/f/xdeoengg";
+const ACCESS_STORAGE_KEY = "gfmAccessGranted";
+
+(function setupAccessGate() {
+  const gate = document.getElementById("accessGate");
+  const form = document.getElementById("accessForm");
+
+  function grantAccess() {
+    gate.classList.add("hidden");
+    document.body.classList.remove("gate-open");
+  }
+
+  let alreadyGranted = false;
+  try {
+    alreadyGranted = localStorage.getItem(ACCESS_STORAGE_KEY) === "true";
+  } catch (err) {
+    alreadyGranted = false;
+  }
+
+  if (alreadyGranted) {
+    grantAccess();
+  } else {
+    document.body.classList.add("gate-open");
+  }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const role = document.getElementById("accessRole").value;
+    if (!role) return;
+
+    const email = document.getElementById("accessEmail").value.trim();
+    const organization = document.getElementById("accessOrg").value.trim();
+
+    try {
+      localStorage.setItem(ACCESS_STORAGE_KEY, "true");
+    } catch (err) {
+      // localStorage unavailable (e.g. private browsing) — still let them in
+    }
+
+    if (ACCESS_FORM_ENDPOINT) {
+      fetch(ACCESS_FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ role, email, organization, page: "AI Conversation Cards" })
+      }).catch(() => {});
+    }
+
+    grantAccess();
+  });
+})();
+
 const DECK = {
   mild: [
     "What was the first activity you used AI for?",
