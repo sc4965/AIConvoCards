@@ -7,6 +7,37 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<div id="accessGate" class="access-gate">
+  <div class="access-card">
+    <img class="sun-logo" src="logo.png" alt="GoodforMEdia">
+    <h2>Welcome! Just a couple quick questions</h2>
+    <p class="access-lede">
+      Before you dive into the deck, help us understand who's using it.
+    </p>
+    <form id="accessForm" class="access-form">
+      <label for="accessRole">Your role *
+        <select id="accessRole" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+          <option value="counselor">Counselor</option>
+          <option value="clinician">Clinician</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+      <label for="accessEmail">Email (optional)
+        <input type="email" id="accessEmail" placeholder="you@example.com">
+      </label>
+      <label for="accessOrg">Organization (optional)
+        <input type="text" id="accessOrg" placeholder="School, clinic, or organization name">
+      </label>
+      <button type="submit" class="btn btn-primary">Enter the Deck</button>
+    </form>
+    <p class="access-note">We use this to understand who's using the deck — your info is never sold or spammed.</p>
+  </div>
+</div>
+
 <div class="wrap">
 
   <header class="site-header">
