@@ -2,7 +2,7 @@
 // Submissions are sent to the Formspree endpoint below and also logged
 // once per browser via localStorage so a visitor isn't asked twice.
 const ACCESS_FORM_ENDPOINT = "https://formspree.io/f/xdeoengg";
-const ACCESS_STORAGE_KEY = "gfmAccessGranted";
+const ACCESS_STORAGE_KEY = "gfmAccessGranted_ai";
 
 (function setupAccessGate() {
   const gate = document.getElementById("accessGate");
