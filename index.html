@@ -26,11 +26,11 @@
           <option value="other">Other</option>
         </select>
       </label>
-      <label for="accessEmail">Email (optional)
-        <input type="email" id="accessEmail" placeholder="you@example.com">
+      <label for="accessEmail">Email *
+        <input type="email" id="accessEmail" placeholder="you@example.com" required>
       </label>
-      <label for="accessOrg">Organization (optional)
-        <input type="text" id="accessOrg" placeholder="School, clinic, or organization name">
+      <label for="accessOrg">Organization *
+        <input type="text" id="accessOrg" placeholder="School, clinic, organization — or “None”" required pattern=".*\S.*" title="Please enter your organization (or “None”)">
       </label>
       <button type="submit" class="btn btn-primary">Enter the Deck</button>
     </form>
